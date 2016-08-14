@@ -1,0 +1,161 @@
+﻿@model AllServiceProvider.Models.ServiceProviderUser
+@{
+    ViewBag.Title = "Detail";
+}
+<h2 id="detail-heading">Detail of skill worker</h2>
+
+@{
+    string message = TempData["FlashMessage"] as string;
+    if (message != null)
+    {
+
+        <div class="alert alert-success">
+            <strong></strong> @message
+        </div>
+
+    }
+    message = TempData["WarningMessage"] as string;
+    if (message != null)
+    {
+
+        <div class="alert alert-warning">
+            <strong>Warning! </strong> @message
+        </div>
+        //WarningMessage
+    }
+}
+<div class="row" id="main-detail-row">
+   <div class="row" id="detail-profile">
+       <div class="col-lg-3" id="detail-col3">
+
+           <div class="panel panel-success">
+               <div class="panel-heading">
+                   @Html.DisplayNameFor(model => model.Name)
+               </div>
+               <div class="panel-body">
+                   @Html.DisplayFor(model => model.Name)
+               </div>
+           </div>
+
+       </div>
+       <div class="col-lg-3" id="detail-col3">
+           <div class="panel panel-success">
+               <div class="panel-heading">
+                   @Html.DisplayNameFor(model => model.City.CityName)
+               </div>
+               <div class="panel-body">
+                   @Html.DisplayFor(model => model.City.CityName)
+               </div>
+           </div>
+       </div>
+
+
+       <div class="col-lg-3" id="detail-col3">
+           <div class="panel panel-success">
+               <div class="panel-heading">
+                   @Html.DisplayNameFor(model => model.Skill.SkillName)
+               </div>
+               <div class="panel-body">
+                   @Html.DisplayFor(model => model.Skill.SkillName)
+               </div>
+           </div>
+       </div>
+   </div>
+    @** if user is not athunticated then show button  !Request.IsAuthenticated**@ 
+
+                @if (Request.IsAuthenticated)
+                {
+
+                    if (@ViewBag.userType.Equals("siteUser"))
+                    {
+
+                        if (@ViewBag.AlreadyContacted == false)// if suer is athuticated and is site user and has not contacted
+
+                        {
+
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                @Html.ActionLink("Contact Person", "ContactPerson", new { id = Model.Id }, new { @class = "btn btn-success", @style = "background-color:lightgreen; width:30%;margin-left:35%;margin-top:0%" })
+                                            </div>
+                                        </div>
+                        }
+                        else // if user is  athunticated and is site user and has already contacted then show 
+                        {
+
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                @Html.ActionLink("Contact Person", "ContactPerson", new { id = Model.Id }, new { disabled = "disabled", @class = "btn btn-success", @style = "background-color:lightgreen; width:30%;margin-left:35%;margin-top:0%" })
+                                            </div>
+                                        </div>
+
+                        }
+                    }
+
+
+                }
+                else // if request is not athunticated
+                {
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            @Html.ActionLink("Contact Person", "ContactPerson", new { id = Model.Id }, new { @class = "btn btn-success", @style = "background-color:lightgreen; width:30%;margin-left:35%;margin-top:0%" })
+                        </div>
+                    </div>
+
+                }
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 id="review-heading">Reviews:- </h3>
+           <div class="row" style="padding:3%;">
+               @foreach (var review in Model.Reviews)
+               {
+                   <div class="row well-sm" style="background-color:rgba(0,50,50,0.15); margin-bottom:1%;">
+                       <h5><span class="glyphicon glyphicon-user"></span>@review.SiteUser.Name</h5>
+                       <h6 class="form-inline"><label><b>Comments</b></label> @review.FeedBack</h6>
+                   </div>
+               }
+           </div>
+
+        </div>
+    </div>
+
+@if (Request.IsAuthenticated && @ViewBag.userType.Equals("spUser"))
+{
+
+
+
+
+}
+else
+{
+    <div class="row">
+        <div class="col-lg-6">
+            @using (Html.BeginForm("CreateReview", "Site", FormMethod.Post))
+            {
+                <label>Post A Review: </label>
+                                <input value="@Model.Id" name="UserId" type="hidden">
+                                @Html.AntiForgeryToken()
+
+                                <textarea name="FeedBack" class="form-control" rows="5" maxlength="200" id="textarea"></textarea>
+
+                                    <input value="model.Id" name="UserId" type="hidden">
+                                    <input type="submit" value="Submit" class="btn btn-success" style="margin-top:1%;" />
+                                    @*<a href="#" class="btn btn-success" style="margin-top:1%;">Submit</a>*@
+            }
+        </div>
+    </div>
+
+
+}
+</div>
+
+
+
+    
+
+
+
+
+
+

@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container-fluid" style="padding:1%;">
+    <div class="row">
+        <div class="col-lg-9">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="height:440px;">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active" style="border:solid;"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1" style="border:solid;"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2" style="border:solid;"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox" style="height:437px;">
+                    <div class="item active" style="height:430px;">
+                        <img src="~/Content/img/Slider/maintenence4.jpg" style="width:90%; height:400px;margin-left:7%;" />
+                        @*<img src="~/Content/img/Slider/slider2.jpg" style="width:90%; height:400px;margin-left:7%;"/>*@
+                        <div class="carousel-caption" style="color:black;">
+                        </div>
+                    </div>
+                    <div class="item" style="height:430px;">
+                        <img src="~/Content/img/Slider/Handyman-Services-Plumber-Carpenter-Painter-Electrician_1.png" style="width:90%; height:400px;margin-left:7%;" />
+                        <div class="carousel-caption">
+                        </div>
+                    </div>
+                    <div class="item" style="height:430px;">
+                        <img src="~/Content/img/Slider/slider1.jpg" style="width:90%; height:400px;margin-left:7%;" />
+                        @*<img src="~/Content/img/Slider/Tradesmen.jpg"  style="width:90%; height:400px;margin-left:7%;"/>*@
+                        <div class="carousel-caption">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3" style="height:440px;">
+            <marquee class="text-center" direction="up" style="height:440px;">
+                    <h4>
+                        Featured Cities
+                    </h4><hr />
+                    <h5>
+                        Lahore<br /><br />
+                        Multan<br /><br />
+                        Fasialabad<br /><br />
+                        Islamabad<br /><br />
+                        Shaikhupura<br /><br />
+                        Gujrat<br /><br />
+                        Karachi<br /><br />
+                        Gilgit<br /><br />
+                        Peshawar<br /><br />
+                    </h5>
+                    <h4>Featured Skill</h4>
+                    <h5><hr />
+                        Plumber<br /><br />
+                        Electrician<br /><br />
+                        D.J<br /><br />
+                        Sweeper<br /><br />
+                        Cook<br /><br />
+                        Driver<br /><br />
+                        Carpet Cleaner<br /><br />
+                        Operator<br /><br />
+                    </h5>
+            </marquee>
+        </div>
+    </div>
+</div>

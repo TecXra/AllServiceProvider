@@ -1,0 +1,256 @@
+﻿body::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+body::-webkit-scrollbar-track 
+{
+    border-radius:7px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+    border-radius:15px;
+  background-color: lightgreen;
+  outline: 2px solid slategrey;
+}
+body::-webkit-scrollbar:horizontal {
+    display:none;
+}
+
+/*Search page Css*/
+select:focus
+{
+    box-shadow:1px 1px 1px lightblue;
+}
+/*Hello User Dropdown Css*/
+    #registerLink, #loginLink
+    {
+        color:white;
+    }
+    .dropdown-toggle
+    {
+        font-size:larger;
+        font-family:'Californian FB';
+    }
+    #user-dropdown
+    {
+        height:90px;
+        margin-left:37.5%;
+    }
+
+/*Detail Page Css*/
+
+#detail-heading 
+{
+    font-family:Constantia serif;
+    text-shadow:2px 2px 2px black;
+    width:50%;
+    color:aquamarine;
+    text-align:center;
+    position: relative;
+    margin-left:25%;
+}
+#detail-heading:before 
+{
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+}
+#detail-heading:before, 
+#detail-heading:focus:before, 
+#detail-heading:active:before 
+{
+  opacity: 1;
+  transform: translateY(5px);
+}
+
+#main-detail-row
+{
+    padding:2%;
+}
+#detail-h3
+{
+    font-family:Constantia serif;
+    text-shadow:1px 1px 1px black;
+    width:50%;
+    color:darkseagreen;
+    text-align:center;
+    margin-left:25%;
+    text-decoration:underline;
+}
+
+#detail-h4
+{
+    font-family:Constantia serif;
+    width:70%;
+    text-align:center;
+    color:rgb(0, 100, 100);
+    margin-left:15%;
+    font-size:x-large;
+    font-weight:bold;
+}
+#detail-profile
+{
+//    border:solid red;
+    margin-left:15%;
+}
+#detail-col3
+{
+    /*height:110px;
+    margin-left:2%;
+    box-shadow:1px 1px 1px black;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:5px;
+    border-left:solid 1px;*/
+}
+#review-heading
+{
+    border-radius:5px;
+    padding:1%;
+    background-color:lightgreen;
+    text-align:center;
+    font-size:xx-large;
+    font-family:'Calisto MT';
+
+}
+.panel-body,.panel-heading
+{
+    font-size:larger;
+    font-family:'Calisto MT';
+}
+#textarea
+{
+   
+}
+#reviewrow {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #radio-ul #radio-li
+    {
+        font-family:'Calisto MT';
+//        border:solid;
+        list-style:none;
+        position: relative;
+    }
+
+        #radio-ul #radio-li input[type=radio]
+        {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        #radio-ul #radio-li label
+        {
+  //          border:solid yellow;
+            display: block;
+            position: relative;
+            font-weight: 300;
+            font-size: 1.35em;
+            padding-top:0%;
+            height: 30px;
+            width:40%;
+            padding-left:7%;
+            margin-left:10%;
+            z-index: 9;
+            cursor: pointer;
+        }
+
+        #radio-ul #radio-li:hover label
+        {
+//            color: darkgreen;
+        }
+
+        #radio-ul #radio-li .check
+        {
+            margin-left:12%;
+            margin-top:-5%;
+            padding:0%;
+            position: relative;
+            border: 2px solid black;
+            border-radius: 100%;
+            height: 20px;
+            width: 20px;
+            float:left;
+            z-index: 5;
+            transition: border .25s linear;
+        }
+
+        #radio-ul #radio-li:hover .check {
+        //    border: 5px solid #FFFFFF;
+        }
+
+        #radio-ul #radio-li .check::before 
+        {
+      //      border:solid red;
+            display: block;
+            position: absolute;
+            content: '';
+            border-radius: 100%;
+            height: 12px;
+            width: 12px;
+            top: 1.5px;
+            left: 2px;
+            margin: auto;
+            transition: background 0.25s linear;
+        }
+
+        input[type=radio]:checked ~ .check 
+        {
+//            border: 5px solid #0DFF92;
+        }
+
+        input[type=radio]:checked ~ .check::before{
+            background: #0DFF92;
+        }
+
+        input[type=radio]:checked ~ label{
+            color: #0DFF92;
+        }
+        .navbar-brand
+        {
+            margin-top:-10%;
+            font-weight:bolder;
+            font-size:x-large;
+            font-family:'Calisto MT';
+        }
+
+
+
+

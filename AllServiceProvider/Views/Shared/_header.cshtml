@@ -1,0 +1,97 @@
+﻿<style>
+    #head-container1
+    {
+        border:solid 1px;
+        background-color:lightgreen;
+    }
+    #navbar1
+    {
+        background-color:aliceblue;
+    }
+    #navbar-span
+    {
+        color:azure;
+        background-color:cornflowerblue;
+    }
+    .img-responsive
+    {
+         width:30%;
+         height:30%;
+
+    }
+    .head-p
+    {
+        color:darkseagreen;
+        width:69%; 
+        float:right;
+        margin-top:-20%;
+        padding:3%;
+        font-weight:bolder;
+        font-family:Algerian;
+    }
+    .head-a
+    {
+        font-weight:bolder;
+        font-size:x-large;
+    }
+    .head-a:hover
+    {
+        text-shadow: 2px 2px 2px black;
+        text-decoration:none;
+    }
+    .head-ul
+    {
+        margin-top:2%;
+    }
+    .head-ul>li
+    {
+        margin-left:0.5%;
+    }
+
+    .head-ul>li>a
+    {
+        color:white;
+        font-weight:bolder;
+    }
+
+</style>
+
+<div class="row" id="head-container1" ng-app="">
+    <div class="navbar-header">
+        <img src="~/Content/img/logo.png" class="img-responsive thumbnail" style="margin-top:1%;margin-left:1%;"/>
+        <p class="head-p">
+            <a href="~/Views/Site/Index.cshtml" class="head-a">All Services Provider</a>
+        </p>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" id="navbar1">
+            <span class="icon-bar" id="navbar-span"></span>
+            <span class="icon-bar" id="navbar-span"></span>
+            <span class="icon-bar" id="navbar-span"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav head-ul"style="width:50%;">
+            <li class="btn btn-success"><a href="~/Site/Index">Home</a></li>
+            <li class="btn btn-success"><a href="~/Site/Search">Search</a></li>
+            <li>  @Html.Partial("_LoginPartial")</li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

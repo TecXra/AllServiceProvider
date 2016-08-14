@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+}
+<style>
+    #col6
+    {
+        border:solid 1px;
+        border-radius:6px;
+        padding:5%;
+    }
+    #col6:hover
+    {
+        box-shadow:5px 5px 5px black;
+    }
+
+</style>
+<h1 class="text-center">Search any Skill Worker</h1>
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6" id="col6">
+        @using (Html.BeginForm("SearchResult", "Site", FormMethod.Get))
+        {
+            <div class="form-group">
+                <label for="Text">Area</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                @Html.DropDownList("CityId", null, htmlAttributes: new { @class = "form-control" })
+            </div><br />
+
+                        <div class="form-group">
+                            <label for="Text">Skill</label>&nbsp;&nbsp;
+                            @Html.DropDownList("SkillId", null, htmlAttributes: new { @class = "form-control" })
+                        </div><br /><br />
+
+                        <input type="submit" value="Search" class="btn btn-default" style="background-color:lightgreen;"/>
+        }
+            </div>
+
+
+        
+
+    </div>
+    <div class="col-lg-3"></div>
+
+
+
+

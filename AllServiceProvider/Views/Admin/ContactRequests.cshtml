@@ -1,0 +1,74 @@
+﻿@model IEnumerable<AllServiceProvider.Models.SiteUser>
+
+@{
+    ViewBag.Title = "Admin Area";
+}
+
+<h2>Index</h2>
+
+<p>
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Name)*@
+            Site User Name
+        </th>
+        <th>
+            Site User Phone Number
+            @*@Html.DisplayNameFor(model => model.PhoneNumber)*@
+        </th>
+        <th>
+            Service Provider Name
+        </th>
+        <th>
+           Skill
+        </th>
+
+        <th>
+            Service Provider Number
+        </th>
+        <th></th>
+</tr>
+
+    @foreach (var item in Model)
+    {
+
+        if (item.ServiceProviderUser.Count > 0)
+        {
+
+                foreach (var innerItem in item.ServiceProviderUser)
+                {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => innerItem.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => innerItem.Skill.SkillName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => innerItem.PhoneNumber)
+                                    </td>
+                                    <th>
+                                      
+
+                                        @Html.ActionLink("Complete Request", "CompleteRequest", "Admin", new { siteUserId = item.Id, spUserId= innerItem.Id }, htmlAttributes: new { @class = "btn btn-primary" })
+
+
+
+
+                                    </th>
+          
+                                </tr>
+               }
+        }
+    }
+
+</table>

@@ -1,0 +1,134 @@
+﻿@model IEnumerable<AllServiceProvider.Models.ServiceProviderUser>
+@{
+    ViewBag.Title = "SearchResult";
+}
+<style>
+    #col4
+    {
+        border-radius:5px;
+        width:30%;
+        margin:1%;
+        border:solid 1px;
+    }
+    #col4:hover
+    {
+        box-shadow:4px 4px 4px black;
+    }
+    #detail
+    {
+        padding:0%;
+        margin:1%;
+       background-color:lightgreen;
+    }
+</style>
+
+<h1 class="text-center">Search Result of Related Search</h1>
+
+<div class="row" style="margin-left:1%;height:350px; overflow-y:scroll;">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-4" id="col4">
+            <th><label>@Html.DisplayNameFor(model => model.Name)</label><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(modelItem => item.Name)<br />
+            <th><label>@Html.DisplayNameFor(model => model.Skill.SkillName)</label></th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            @Html.DisplayFor(modelItem => item.Skill.SkillName)<br />
+
+            
+            <label>
+                @Html.DisplayNameFor(model => model.City.CityName)
+            </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.DisplayFor(modelitem => item.City.CityName)<br />
+
+            <div id="detail" class="btn">
+                @Html.ActionLink("Details", "Detail", "Site", new { id = item.Id },new { @class = "btn btn-default", @style = "color:white; font-weight:bold;background-color:lightgreen; width:100%;" })
+            </div>
+            <br />
+        </div>
+    }
+    <!--
+    <div class="col-lg-3" style="border:solid 0.5px; width:23%;margin:1%;border-radius:6px;">
+        <h4>Asif Sharif</h4>
+        <h5>Lahore</h5>
+        <a href="~/Site/Detail" class="btn btn-success" style="margin-bottom:1%;">Detail</a>
+    </div>
+    <div class="col-lg-3" style="border:solid 0.5px; width:23%;margin:1%;border-radius:6px;">
+        <h4>Asif Sharif</h4>
+        <h5>Lahore</h5>
+        <a href="~/Site/Detail" class="btn btn-success" style="margin-bottom:1%;">Detail</a>
+    </div>
+    <div class="col-lg-3" style="border:solid 0.5px; width:23%;margin:1%;border-radius:6px;">
+        <h4>Asif Sharif</h4>
+        <h5>Lahore</h5>
+        <a href="~/Site/Detail" class="btn btn-success" style="margin-bottom:1%;">Detail</a>
+    </div>
+    <div class="col-lg-3" style="border:solid 0.5px; width:23%;margin:1%;border-radius:6px;">
+        <h4>Asif Sharif</h4>
+        <h5>Lahore</h5>
+        <a href="~/Site/Detail" class="btn btn-success" style="margin-bottom:1%;">Detail</a>
+    </div>
+    <div class="col-lg-3" style="border:solid 0.5px; width:23%;margin:1%;border-radius:6px;">
+        <h4>Asif Sharif</h4>
+        <h5>Lahore</h5>
+        <a href="~/Site/Detail" class="btn btn-success" style="margin-bottom:1%;">Detail</a>
+    </div>
+    <div class="col-lg-3" style="border:solid 0.5px; width:23%;margin:1%;border-radius:6px;">
+        <h4>Asif Sharif</h4>
+        <h5>Lahore</h5>
+        <a href="~/Site/Detail" class="btn btn-success" style="margin-bottom:1%;">Detail</a>
+    </div>
+    <div class="col-lg-3" style="border:solid 0.5px; width:23%;margin:1%;border-radius:6px;">
+        <h4>Asif Sharif</h4>
+        <h5>Lahore</h5>
+        <a href="~/Site/Detail" class="btn btn-success" style="margin-bottom:1%;">Detail</a>
+    </div>
+    <div class="col-lg-3" style="border:solid 0.5px; width:23%;margin:1%;border-radius:6px;">
+        <h4>Asif Sharif</h4>
+        <h5>Lahore</h5>
+        <a href="~/Site/Detail" class="btn btn-success" style="margin-bottom:1%;">Detail</a>
+    </div>
+    <div class="col-lg-3" style="border:solid 0.5px; width:23%;margin:1%;border-radius:6px;">
+        <h4>Asif Sharif</h4>
+        <h5>Lahore</h5>
+        <a href="~/Site/Detail" class="btn btn-success" style="margin-bottom:1%;">Detail</a>
+    </div>
+    <div class="col-lg-3" style="border:solid 0.5px; width:23%;margin:1%;border-radius:6px;">
+        <h4>Asif Sharif</h4>
+        <h5>Lahore</h5>
+        <a href="~/Site/Detail" class="btn btn-success" style="margin-bottom:1%;">Detail</a>
+    </div>
+    <div class="col-lg-3" style="border:solid 0.5px; width:23%;margin:1%;border-radius:6px;">
+        <h4>Asif Sharif</h4>
+        <h5>Lahore</h5>
+        <a href="~/Site/Detail" class="btn btn-success" style="margin-bottom:1%;">Detail</a>
+    </div>
+    <div class="col-lg-3" style="border:solid 0.5px; width:23%;margin:1%;border-radius:6px;">
+        <h4>Asif Sharif</h4>
+        <h5>Lahore</h5>
+        <a href="~/Site/Detail" class="btn btn-success" style="margin-bottom:1%;">Detail</a>
+    </div>
+    <div class="col-lg-3" style="border:solid 0.5px; width:23%;margin:1%;border-radius:6px;">
+        <h4>Asif Sharif</h4>
+        <h5>Lahore</h5>
+        <a href="~/Site/Detail" class="btn btn-success" style="margin-bottom:1%;">Detail</a>
+    </div>
+    <div class="col-lg-3" style="border:solid 0.5px; width:23%;margin:1%;border-radius:6px;">
+        <h4>Asif Sharif</h4>
+        <h5>Lahore</h5>
+        <a href="~/Site/Detail" class="btn btn-success" style="margin-bottom:1%;">Detail</a>
+    </div>
+-->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
